@@ -1,0 +1,35 @@
+.container
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container-fluid
+      %a.navbar-brand{:href => "#"}
+        %i.fa-solid.fa-house>
+        Navbar scroll
+      %button.navbar-toggler{"aria-controls" => "navbarScroll", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarScroll", "data-bs-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarScroll.collapse.navbar-collapse
+        %ul.navbar-nav.me-auto.my-2.my-lg-0.navbar-nav-scroll{:style => "--bs-scroll-height: 100px;"}
+          %li.nav-item
+            %a.nav-link.active{"aria-current" => "page", :href => "#"} Home
+          %li.nav-item
+            %a.nav-link{:href => "#"} Link
+          %li.nav-item.dropdown
+            %a#navbarScrollingDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+              Link
+            %ul.dropdown-menu{"aria-labelledby" => "navbarScrollingDropdown"}
+              %li
+                %a.dropdown-item{:href => "#"} Action
+              %li
+                %a.dropdown-item{:href => "#"} Another action
+              %li
+                %hr.dropdown-divider/
+              %li
+                %a.dropdown-item{:href => "#"} Something else here
+          %li.nav-item
+            %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Link
+        %form.d-flex
+          %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+          %button.btn.btn-outline-success{:type => "submit"} Search
+  %h1 Hello world
+  = link_to privacy_policy_path, class: 'btn btn-lg btn-warning' do
+    %i.fa-solid.fa-file-word
+    Privacy Policy
